@@ -1,56 +1,72 @@
 # LR6
-Лабораторная работа №6
+#### Система контроля версий
 
 ## Progress of work
 
-### 1. астройка клиента
-fff
+### 1. Настройка клиента
+![alt_text](data/config.png "git config")
 
 ### 2. Клонирование удаленного репозитория
-fff
+![alt_text](data/clone.png "git lone")
 
-### 3.
-
-### 4.
-
-### 5.
-
-### 6.
-
-### 7.
-
-### 8.
-
-### 9.
-
+### 3. Добавление файла через интерфейс гита
+![alt_text](data/git_int.png "git interface")
+### 4. История операция для каждой ветки
+![alt_text](data/full-log.png "git log")
+### 5. Последние изменения
+    git diff
+### 6. Слияние в ветку master, решение конфликтов
+![alt_text](data/merge.png "git merge")
+### 7. Сделать несколько комитов с изменениями
+![alt_text](data/2commits+branch.png "2commits+branch")
+### 8. Хард откат комита
+![alt_text](data/reset_hard.png "git reset")
+### 9. Создать ветку для отчета
+![alt_text](data/report_branch.png "git branch -b 'branch_name'")
 ## Command logs
 
-git config -l
+- git config -l
+- git clone git@github.com:reven-n1/LR6.git
+- cd LR6/
+- git pull
 
-  687  git clone git@github.com:reven-n1/LR6.git
-  688  cd LR6/
-  689  git pull
+**/добавление файла через интерфейс гита/**
 
-  692  git log
-  693  git log --pretty=format:"%h - %an, %ar : %s"
+- git log
+- git diff(git show commit~ commit)
+- git checkout master
+- git merge origin/branch1
 
-  695  git checkout master
-  696  git merge origin/branch1
+**<details><summary>/решение конфликта/</summary>**
 
-  699  nano mergefile.txt 
-  700  git add mergefile.txt 
+before
 
-  702  git commit -am "soleved merge conflict"
-  703  git branch -d branch1
+![alt_text](data/conflict.png "conflict")
 
-  706  nano wtf.py 
-  707  git add .
+after
 
-  709  git commit -am "1st change"
-  710  nano wtf.py 
-  711  git commit -am "2nd change"
-  712  git reset --hard HEAD~2
-  713  git checkout -b "report"
+![alt_text](data/nano_solved_conflict.png "conflict")</details>
 
-  716  mkdir data
 
+- git add mergefile.txt 
+- git commit -am "soleved merge conflict"
+
+- (git branch -d branch1) - автоматически удалилась
+
+**/изменения в wtf.py - 1/**
+- git add .
+- git commit -am "1st change"
+
+**/изменения в wtf.py - 2/**
+- git add .
+- git commit -am "2nd change"
+- git reset --hard HEAD~2
+- git checkout -b "report"
+
+- mkdir data
+
+## Форматированная история комитов
+
+git log --pretty=format:"%h - %an, %ar : %s"
+
+![alt_text](data/formated_log.png "formated git log")
