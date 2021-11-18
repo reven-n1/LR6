@@ -51,7 +51,7 @@ after
 - git add mergefile.txt 
 - git commit -am "soleved merge conflict"
 
-- (git branch -d branch1) - автоматически удалилась
+- git branch -d branch1
 
 **/изменения в wtf.py - 1/**
 - git add .
